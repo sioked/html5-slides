@@ -16,7 +16,7 @@
 			<key>ESPublishServerStateMinimumUpdateTimeDifferenceKey</key>
 			<real>60</real>
 			<key>ESPublishServerStateModeKey</key>
-			<integer>3</integer>
+			<integer>0</integer>
 			<key>ESPublishServerStateNameKey</key>
 			<string>EdSiok.com</string>
 			<key>ESPublishServerStateOptionsKey</key>

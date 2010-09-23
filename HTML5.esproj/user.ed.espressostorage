@@ -7,16 +7,16 @@
 	<key>ESProjectWindowState</key>
 	<dict>
 		<key>ContentSize</key>
-		<string>{1106, 705}</string>
+		<string>{1207, 870}</string>
 		<key>ProjectURL</key>
-		<string>file://localhost/Users/ed/Sites/HTML5/HTML5.esproj/</string>
+		<string>file://localhost/Users/ed/Sites/html5slides/HTML5.esproj/</string>
 		<key>StateType</key>
 		<string>ProjectWindow</string>
 		<key>TopLeftPoint</key>
-		<string>{662, 866}</string>
+		<string>{360, 1016}</string>
 	</dict>
 	<key>com.macrabbit.Espresso.FileManager.DisclosureCollapsed</key>
-	<true/>
+	<false/>
 	<key>com.macrabbit.Espresso.FileManager.FileControllerState</key>
 	<dict>
 		<key>ExpandedURLs</key>
@@ -35,20 +35,20 @@
 				<string>DefaultTab</string>
 			</dict>
 			<dict>
-				<key>StateType</key>
-				<string>PreviewTab</string>
-				<key>URL</key>
-				<string>file:///Users/ed/Sites/HTML5/main.html</string>
-			</dict>
-			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/ed/Sites/HTML5/main.html</string>
+				<string>file://localhost/Users/ed/Sites/html5slides/forms/js/script.js</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
 			<dict>
 				<key>DocumentURL</key>
-				<string>file://localhost/Users/ed/Sites/HTML5/forms/index.html</string>
+				<string>file://localhost/Users/ed/Sites/html5slides/forms/index.html</string>
+				<key>StateType</key>
+				<string>DefaultTab</string>
+			</dict>
+			<dict>
+				<key>DocumentURL</key>
+				<string>file://localhost/Users/ed/Sites/html5slides/forms/edit.html</string>
 				<key>StateType</key>
 				<string>DefaultTab</string>
 			</dict>
