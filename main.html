@@ -121,13 +121,13 @@
       
       .slide.far-past {
         display: block;
-        margin-left: -2400px;
+        margin-left: -2800px;
       }
       
       .slide.past {
         visibility: visible;
         display: block;
-        margin-left: -1400px;
+        margin-left: -1600px;
       }
       
       .slide.current {
@@ -139,12 +139,12 @@
       .slide.future {
         visibility: visible;
         display: block;
-        margin-left: 500px;
+        margin-left: 700px;
       }
       
       .slide.far-future {
         display: block;
-        margin-left: 1500px;
+        margin-left: 1900px;
       }
 
       body.three-d div.presentation {
@@ -189,6 +189,7 @@
       	font-weight: normal;
       	padding: 0;
       	margin: 0;
+		font-family: 'LeagueGothic';
       }
       
       h2 {
@@ -464,7 +465,7 @@
             <p>This presentation is an HTML5 website</p>
             <p>Press <span class="key">&rarr;</span> key to advance.</p>
             <p>Zoom in/out: <span class="key">Ctrl or Command</span> + <span class="key">+/-</span></p>
-            <p id="disclaimer-message">Having issues seeing the presentation? Read the <a href="disclaimer.html">disclaimer</a></p>
+			<p>Slide framework created by google</p>
           </section>
         </div>
                 
@@ -489,7 +490,7 @@
                 HTML5*
               </h1>
               <h2>
-                Web Development to the next level
+                Modern markup for the modern web.
               </h2>
             </hgroup>
             <p>*Including other next generation technologies of the Web Development stack</p>
@@ -498,55 +499,275 @@
 
 
         <div class="slide">
-          <header>Rough Timeline of Web Technologies</header>
-          <section>
-            <style>
-              span.year {
-                display: inline-block;
-                text-align: right;
-                width: 120px;
-                letter-spacing: -2px;
-                padding-right: 10px;
-              }
-              hr {
-                visibility: hidden;
-                padding: 0;
-                margin: 0 0 -20px 0;
-              }
-              #timeline {
-                font-size: 50px;
-              }
-              #timeline li {
-                padding: 0;
-              }
-            </style>
-            
-            <ul id="timeline">
-              <li><span class="year">1991</span> <span class="html">HTML</span></li>
-              <li><span class="year">1994</span> <span class="html">HTML 2</span></li>
-              <li><span class="year">1996</span> <span class="css">CSS 1</span> + <span class="js">JavaScript</span></li>
-              <li><span class="year">1997</span> <span class="html">HTML 4</span></li>
-              <li><span class="year">1998</span> <span class="css">CSS 2</span></li>
-              <li><span class="year">2000</span> <span class="html">XHTML 1</span></li>
-              <li><span class="year"><em class="stroke">2002</em></span> <span class="css">Tableless Web Design</span></li>
-              <li><span class="year"><em class="stroke">2005</em></span> <span class="js">AJAX</span></li>
-              <li><span class="year"><em class="stroke">2009</em></span> <span class="html">HTML 5</span></li>
-            </ul>            
-          </section>
+			<style>
+	            .emphasis h1, .emphasis h2 {
+	              color: black;
+	            }
+	            .emphasis h1 {
+	              letter-spacing: -2px;
+	              font-size: 96px;
+	            }
+	            .emphasis h2 {
+	              margin-top: -5px;
+	              font-size: 40px;
+	              letter-spacing: -1px;
+	            }
+	          </style>
+          <section class="middle emphasis">
+			<h1>What is HTML5?</h1>
+		  
+          	<section class="formula">
+           		HTML5 ~=
+	        	<span class="html">HTML</span>
+	        	+
+	        	<span class="css">CSS</span>
+	        	+
+	        	<span class="js">JS APIs</span>
+	      	</section>
+			<p>*Not just the markup language, but the whole web stack</p>
+		  <section></section>
         </div>
 
         
         <div class="slide">
-          <section class="middle formula">
-            HTML5 ~=
-            <span class="html">HTML</span>
-            +
-            <span class="css">CSS</span>
-            +
-            <span class="js">JS APIs</span>
+		  <section class="middle emphasis">
+			<h1>When will it be ready?</h1>
+          	<h2>2022</h2>
+		  </section>
+        </div>
+
+		<style>
+            .backgroundimage img {
+			  position: absolute;
+			  top: 0px;
+			  left: 0px;
+            }
+
+			.backgroundimage section {
+				z-index: 2;
+				position: absolute;
+				text-shadow: rgba(255, 255, 255, 0.8) 0 6px 14px;
+				top: 400px;
+			}
+          </style>
+
+        <div class="slide backgroundimage">
+		  <img src="src/sunrise.jpg" class="backgroundimage"></img>
+		  <section class="middle emphasis">
+			<h1>It's still usable today!</h1>
+		  </section>
+        </div>
+
+        <div class="slide">
+		  <section class="middle emphasis">
+			<h1>HTML5 Markup Changes</h1>
+		  </section>
+        </div>
+
+		<div class="slide">
+		   <header><span class="html">HTML</span> <h1>New DOCTYPE</h1></header>
+		      <section>
+				<h2>Compare new:</h2>
+		         <pre>&lt;!DOCTYPE html&gt;</pre>
+				<br/>
+				<h2>To old:</h2>
+				<pre>&lt;DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+				   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</pre>
+		      </section>
+		  </div>
+
+		<style>
+            pre.half {
+			  width: 375px;
+			  float: left;
+            }
+		</style>
+
+		<div class="slide">
+          <header><span class="html">HTML</span> <h1>New semantic tags</h1></header>
+          <section>
+            <pre class="half">
+&lt;body&gt;
+  &lt;<b>header</b>&gt;
+    &lt;<b>hgroup</b>&gt;
+      &lt;h1&gt;Page title&lt;/h1&gt;
+      &lt;h2&gt;Page subtitle&lt;/h2&gt;
+    &lt;/hgroup&gt;
+  &lt;/header&gt;
+
+  &lt;<b>nav</b>&gt;
+   &lt;ul&gt;
+     Navigation...
+   &lt;/ul&gt;
+  &lt;/nav&gt;
+
+  &lt;<b>footer</b>&gt;
+   Copyright &copy; 2009.
+  &lt;/footer&gt;
+&lt;/body&gt;
+
+            </pre>
+			<pre class="half">
+&lt;body&gt;
+  &lt;<b>div class="header"</b>&gt;
+    &lt;<b>div</b>&gt;
+      &lt;h1&gt;Page title&lt;/h1&gt;
+      &lt;h2&gt;Page subtitle&lt;/h2&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;<b>div class="navigation"</b>&gt;
+   &lt;ul&gt;
+     Navigation...
+   &lt;/ul&gt;
+  &lt;/div class="navigation"&gt;
+
+  &lt;<b>div class="footer"</b>&gt;
+   Copyright &copy; 2009.
+  &lt;/footer&gt;
+&lt;/body&gt;
+
+			</pre>
           </section>
         </div>
-        
+
+		<div class="slide">
+          <header><span class="html">HTML</span> <h1>New semantic tags</h1></header>
+          <section>
+            <pre class="half">
+&lt;<b>section</b>&gt;
+   &lt;<b>article</b>&gt;
+     &lt;<b>header</b>&gt;
+       &lt;h1&gt;Title&lt;/h1&gt;
+     &lt;/header&gt;
+     &lt;section&gt;
+       Content...
+     &lt;/section&gt;
+   &lt;/article&gt;
+
+   &lt;article&gt;
+     &lt;header&gt;
+       &lt;h1&gt;Title&lt;/h1&gt;
+     &lt;/header&gt;
+     &lt;section&gt;
+       Content...
+     &lt;/section&gt;
+   &lt;/article&gt;
+
+  &lt;<b>aside</b>&gt;
+   Top links...
+  &lt;/aside&gt;
+&lt;/section&gt;
+            </pre>
+
+			<pre class="half">
+&lt;<b>span class="section"</b>&gt;
+   &lt;<b>span class="article"</b>&gt;
+     &lt;<b>span class="article-header"</b>&gt;
+       &lt;h1&gt;Title&lt;/h1&gt;
+     &lt;/span&gt;
+     &lt;span class="content"&gt;
+       Content...
+     &lt;/span&gt;
+   &lt;/span&gt;
+
+   &lt;span class="article"&gt;
+     &lt;span class="article-header"&gt;
+       &lt;h1&gt;Title&lt;/h1&gt;
+     &lt;/span&gt;
+     &lt;span class="content"&gt;
+       Content...
+     &lt;/span&gt;
+   &lt;/span&gt;
+
+  &lt;<b>span class="aside"</b>&gt;
+   Top links...
+  &lt;/span&gt;
+&lt;/span&gt;
+			</pre>
+          </section>
+        </div>
+
+
+        <div class="slide">
+		  <section class="middle emphasis">
+			<h1>Cool new stuff for web apps!</h1>
+		  </section>
+        </div>
+
+        <div class="slide">
+		  <section class="">
+			<ul> 
+              <li><span class="year">Web Sockets</span></li> 
+              <li><span class="year">Local/Offline Storage</span></li> 
+              <li><span class="year">Cross-site Document Sharing</span></li> 
+            </ul>
+  		</section>
+        </div>
+
+		<div class="slide">
+			<style>
+		    	#ta {
+		        	width: 300px;
+		        	height: 150px;
+		        	display: block;
+		        }
+		        #localstorage-message {
+		           padding-top: 50px;
+		        }
+		    </style>
+		    <header><h1>Web Storage</h1></header>
+		    <section>
+		<pre>
+		// use localStorage for persistent storage
+		// use sessionStorage for per tab storage
+		textarea.addEventListener('keyup', function () {
+		  window.<b>localStorage</b>['value'] = area.value;
+		  window.<b>localStorage</b>['timestamp'] = (new Date()).getTime();
+		}, false);
+		textarea.value = window.<b>localStorage</b>['value'];
+		</pre>
+		<p id="localstorage-message">Save text value on the client side (crash-safe)</p>
+		<textarea id="ta" placeholder="Type your text here..."></textarea>
+		<button id="save-ta">Save</button>
+		<p id="ta-log"></p>
+		<script>
+		  var area = document.querySelector('#ta');
+		  // place content from previous edit
+		  if (!area.value) {
+		    area.value = window.localStorage.getItem('value');
+		  }
+		  updateLog(false);
+
+		  // your content will be saved locally
+		  document.querySelector('#save-ta').addEventListener('click', function () {
+		    window.localStorage.setItem('value', area.value);
+		    window.localStorage.setItem('timestamp', (new Date()).getTime());
+		    updateLog(true);
+		  }, false);
+
+		  function updateLog(new_save) {
+		    var log = document.querySelector("#ta-log");
+		    var delta = 0;
+		    if (window.localStorage.getItem('value')) {
+		      delta = ((new Date()).getTime() - (new Date()).setTime(window.localStorage.getItem('timestamp'))) / 1000;
+		      if (new_save) {
+		        log.textContent = 'Saved. Content will be available after browser refresh/reopen.';
+		        setTimeout(function() {
+		          log.textContent = '';
+		        }, 3000);
+		      } else {
+		        log.textContent = 'last saved: ' + delta + 's ago';
+		      }
+		    }
+		  }
+
+		</script>
+		          </section>
+		        </div>
+		
+
+
 
         <div class="slide">
           <section class="middle">
@@ -588,66 +809,7 @@ var els = document.<b>querySelectorAll</b>("table.test > tr > td");
         </div>
 
 
-        <div class="slide">
-          <style>
-            #ta {
-              width: 300px;
-              height: 150px;
-              display: block;
-            }
-            #localstorage-message {
-              padding-top: 50px;
-            }
-          </style>
-          <header><span class="js">JS APIs</span> <h1>Web Storage</h1></header>
-          <section>
-<pre>
-// use localStorage for persistent storage
-// use sessionStorage for per tab storage
-textarea.addEventListener('keyup', function () {
-  window.<b>localStorage</b>['value'] = area.value;
-  window.<b>localStorage</b>['timestamp'] = (new Date()).getTime();
-}, false);
-textarea.value = window.<b>localStorage</b>['value'];
-</pre>
-<p id="localstorage-message">Save text value on the client side (crash-safe)</p>
-<textarea id="ta" placeholder="Type your text here..."></textarea>
-<button id="save-ta">Save</button>
-<p id="ta-log"></p>
-<script>
-  var area = document.querySelector('#ta');
-  // place content from previous edit
-  if (!area.value) {
-    area.value = window.localStorage.getItem('value');
-  }
-  updateLog(false);
-  
-  // your content will be saved locally
-  document.querySelector('#save-ta').addEventListener('click', function () {
-    window.localStorage.setItem('value', area.value);
-    window.localStorage.setItem('timestamp', (new Date()).getTime());
-    updateLog(true);
-  }, false);
 
-  function updateLog(new_save) {
-    var log = document.querySelector("#ta-log");
-    var delta = 0;
-    if (window.localStorage.getItem('value')) {
-      delta = ((new Date()).getTime() - (new Date()).setTime(window.localStorage.getItem('timestamp'))) / 1000;
-      if (new_save) {
-        log.textContent = 'Saved. Content will be available after browser refresh/reopen.';
-        setTimeout(function() {
-          log.textContent = '';
-        }, 3000);
-      } else {
-        log.textContent = 'last saved: ' + delta + 's ago';
-      }
-    }
-  }
-  
-</script>
-          </section>
-        </div>
 
 
 
@@ -1288,65 +1450,7 @@ socket.<b>onclose</b> = function(event) { alert(“closed”); }
         </div>
         
 
-        <div class="slide">
-          <header><span class="html">HTML</span> <h1>New semantic tags</h1></header>
-          <section>
-            <pre class="two-column">&lt;body&gt;
-  &lt;<b>header</b>&gt;
-    &lt;<b>hgroup</b>&gt;
-      &lt;h1&gt;Page title&lt;/h1&gt;
-      &lt;h2&gt;Page subtitle&lt;/h2&gt;
-    &lt;/hgroup&gt;
-  &lt;/header&gt;
-
-  &lt;<b>nav</b>&gt;
-   &lt;ul&gt;
-     Navigation...
-   &lt;/ul&gt;
-  &lt;/nav&gt;
-
-  &lt;<b>section</b>&gt;
-   &lt;<b>article</b>&gt;
-     &lt;<b>header</b>&gt;
-       &lt;h1&gt;Title&lt;/h1&gt;
-     &lt;/header&gt;
-     &lt;section&gt;
-       Content...
-     &lt;/section&gt;
-   &lt;/article&gt;
-
-   &lt;article&gt;
-     &lt;header&gt;
-       &lt;h1&gt;Title&lt;/h1&gt;
-     &lt;/header&gt;
-     &lt;section&gt;
-       Content...
-     &lt;/section&gt;
-   &lt;/article&gt;
-
-   &lt;article&gt;
-     &lt;header&gt;
-       &lt;h1&gt;Title&lt;/h1&gt;
-     &lt;/header&gt;
-     &lt;section&gt;
-       Content...
-     &lt;/section&gt;
-   &lt;/article&gt;
-  &lt;/section&gt;
-
-  &lt;<b>aside</b>&gt;
-   Top links...
-  &lt;/aside&gt;
-
-  &lt;<b>footer</b>&gt;
-   Copyright &copy; 2009.
-  &lt;/footer&gt;
-&lt;/body&gt;
-
-            </pre>
-          </section>
-        </div>
-
+        
 
         <div class="slide">
           <header><span class="html">HTML</span> <h1>New link relations</h1></header>
