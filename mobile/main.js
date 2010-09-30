@@ -124,9 +124,12 @@ function detectBrowser() {
     if (useragent.indexOf('iPhone') != -1 || useragent.indexOf('Android') != -1) {
         mapdiv.style.width = '100%';
         mapdiv.style.height = '100%';
+    } else if ( useragent.indexOf('iPad') != -1 ){
+        mapdiv.style.width = '768px';
+        mapdiv.style.height = '1024px';
     } else {
-        mapdiv.style.width = '600px';
-        mapdiv.style.height = '800px';
+        mapdiv.style.width = '768px';
+        mapdiv.style.height = '1024px';
     }
 };
 
@@ -159,7 +162,7 @@ function completedSearch(){
 function addClickHandler(marker, result, position){
     var html = '<div id="content"><div id="title">'
       + result.title +'</div>'
-      +'<ul><li>'+result.phoneNumbers[0].number+'</li>'
+      +'<ul><li><a href="tel:'+result.phoneNumbers[0].number+'">'+result.phoneNumbers[0].number+'</a></li>'
       +'<li>'+result.addressLines[0]+'</li>'
       +'<li>'+result.addressLines[1]+'</li>'
       +'</div>';
