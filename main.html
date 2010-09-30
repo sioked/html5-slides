@@ -53,7 +53,64 @@
                 -webkit-text-stroke-color: red;
                 -webkit-text-stroke-width: 1px;
                }
+      
+      .slide p.giddyup { font-family:'GiddyUp Std'; font-size:2.0em;}
+       @font-face {
+                 font-family: 'GiddyUp Std';
+                 src: url(src/GiddyupStd.otf);
+       }
+       
+       .rounded
+       {     
+             border-radius:50px;
+             border-top-left-radius:150px;
+             border-bottom-left-radius:0px;
+             -webkit-transition-property: all;
+             -webkit-transition-duration: 1.5s;
+             height:55px;
+       }
+       
+       .rounded:hover
+       {
+             border-top-left-radius:50px;
+             border-bottom-left-radius:50px;
+             border-top-right-radius:150px;
+             border-bottom-right-radius:0px;
+       }
  
+        .sunlight { width:300px; border:solid 1px #000; padding:30px 30px 30px 50px;
+             background: -webkit-gradient(radial, 300 50, 0, 300 50, 100, from(yellow), to(#fff));
+        }
+        .sunlight li {padding:0px;margin:0px;line-height:18px;}
+ 
+        .sunlight.moonlight
+         {
+            -webkit-transition-property:all ;
+             -webkit-transition-duration:1.5s;
+         }
+ 
+         .sunlight.moonlight:hover
+         {
+             background: -webkit-gradient(radial, 300 20, 0, 300 20, 20, from(#fff), to(#000));
+             color:#fff;
+         }    
+         
+         canvas#bouncyball {border:solid 1px black;}   
+       
+        .windows-phone-7 {
+          background: url(src/HTC-HD3.jpg) center center no-repeat;
+          background-size: 100%;
+          width:140px;
+          height:165px;
+          -webkit-transition-property: width, height;
+          -webkit-transition-duration: 1s;
+        }
+ 
+       .windows-phone-7:hover {
+          width:280px;
+          height:330px;
+        }
+       
       .slides {
         width: 100%;
         height: 100%;
@@ -691,7 +748,15 @@
               <h1>Rich UI Updates</h1>
             </section>
           </div>
-
+          <div class = "slide">
+          <section class = "bulleted">
+            <ul>
+                <li>Audio / Video Elements </li>
+                <li>CSS3 Styles and Selectors</li>
+                <li>Canvas Element and Scalable Vector Graphics (SVG)</li>
+            </ul>
+            </section>
+          </div>
           <div class = "slide">
             <header>
                 <h1>Audio & Video</h1>
@@ -718,7 +783,7 @@
                 <pre>&lt;style&gt;<br />.shadow { <b>text-shadow: rgba(0, 0, 0, 0.5) 0 4px 4px;</b> } <br />&lt;/style&gt;<br /><br />&lt;p class = "shadow"&gt;Text with shadows&lt;/p&gt;</pre>
                 <p class = "shadow">Text with shadows</p>
 
-                <pre>&lt;style&gt;<br />.stroke<br />{<br /><b>-webkit-text-fill-color: black;</b><br /><b>-webkit-text-stroke-color: red;</b><br /><b>-webkit-text-stroke-width: 1px;</b><br />}<br />&lt;/style&gt;<br /><br />&lt;p&gt;Add a &lt;span class = "stroke"&gt;stroke&lt;/span&gt; around your text&lt;/p&gt;</pre>
+                <pre>&lt;style&gt;<br />.stroke<br />{<br />    <b>-webkit-text-fill-color: black;</b><br />    <b>-webkit-text-stroke-color: red;</b><br />    <b>-webkit-text-stroke-width: 1px;</b><br />}<br />&lt;/style&gt;<br /><br />&lt;p&gt;Add a &lt;span class = "stroke"&gt;stroke&lt;/span&gt; around your text&lt;/p&gt;</pre>
                 <p>Add a <span class = "stroke">stroke</span> around your text</p>
             </section>
           </div>
@@ -727,8 +792,176 @@
             <header>
                 <h1>CSS3 - Part 2</h1>
             </header>
+            <section>
+             
+            <pre>&lt;style&gt;<br /><b>@font-face<br />{<br />    font-family: 'GiddyUp Std';<br />    src: url(src/GiddyupStd.otf);<br />}</b><br />.giddyup { font-family: 'GiddyUp Std'; }<br />&lt;/style&gt;<br /><br />&lt;p class = "giddyup"&gt;Embed your favorite fonts&lt;/p&gt;</pre>
+            <p class = "giddyup">Embed your favorite fonts</p>
+            </section>
             </div>
 
+            <div class = "slide">
+                <header>
+                    <h1>CSS3 - Part 3</h1>
+                </header>
+             <section>
+ 
+
+                    <pre>&lt;style&gt;<br />.rounded {<br />    <b>border-top-left-radius:50px;  border-bottom-left-radius:50px;<br />    border-top-right-radius:150px;  border-bottom-right-radius:0px;</b>  }<br />.rounded<b>:hover</b> { <br />    <b>border-top-left-radius:50px; border-bottom-left-radius:50px;<br />    border-top-right-radius:150px; border-bottom-right-radius:0px;</b>  }<br />.sunlight {<br />    width:300px; border:solid 1px #000; padding:30px 30px 30px 50px;<br /><b>    background: -webkit-gradient(radial, 300 50, 0, 300 50, 150, from(yellow), <br />    to(#fff));</b>  }<br />&lt;/style&gt;<br /><br />&lt;ul class = "rounded sunlight"&gt;<br />    &lt;li&gt;rounded corners&lt;/li&gt;<br />    &lt;li&gt;radial gradient background&lt;/li&gt;<br />    &lt;li&gt;hover over effect using CSS3 transitions&lt;/li&gt;<br />&lt;/ul&gt;</pre>
+
+                    <ul class = "rounded sunlight">
+                        <li>rounded corners</li>
+                        <li>radial gradient background</li>
+                        <li>hover over effect using CSS3 transitions</li>
+                    </ul>
+                </section>
+            </div>
+            <div class = "slide">
+               <header>
+                    <h1>CSS3 - Part 4</h1>
+                </header>
+             <section>
+                <pre>&lt;style&gt;<br />.sunlight.moonlight<br />{<br />    <b>-webkit-transition-property:all;<br />    -webkit-transition-duration:1.5s;</b><br />}<br />.sunlight.moonlight:<b>hover</b><br />{<br />    <b>background:-webkit-gradient(radial,60 30,0,60 30,50, from(#fff), to(#000));</b><br />    color:#fff;<br />}<br />&lt;/style&gt;<br /><br />&lt;ul class = "sunlight moonlight"&gt;
+    &lt;li&gt;same sunlight class&lt;/li&gt;
+    &lt;li&gt;moonlight hover over effect&lt;/li&gt;
+&lt;/ul&gt;</pre>
+                <ul class = "sunlight moonlight">
+                    <li>same sunlight class</li>
+                    <li>moonlight hover over effect</li>
+                </ul>
+             </section>
+        </div>
+         <div class = "slide">
+               <header>
+                    <h1>CSS3 - Part 5</h1>
+                </header>
+             <section>
+  
+
+                <pre>&lt;style&gt;<br />.windows-phone-7  {<br />    background:url(src/HTC-HD3.jpg) center center no-repeat;<br /><b>    background-size:100%;<br />    -webkit-transition-property:width,height;<br />    -webkit-transition-duration:1s;</b><br />}<br />.windows-phone-7<b>:hover</b> { width:280px; height:330px; }<br />&lt;/style&gt;<br /><br />&lt;div class = "windows-phone-7"&gt;&lt;/div&gt;</pre>
+                <h2>Enlarge an image with a transition</h2>
+                <div style = "margin-left:250px;width:280px;height:280px;background-color:#fff;overflow:hidden;">
+                <div class = "windows-phone-7"></div>
+                </div>
+
+             </section>
+        </div>
+        <div class = "slide">
+            <header>
+                <h1>Canvas</h1>
+            </header>
+            <section>
+                <pre><b>&lt;canvas id = "shapes" width="300" height="300"&gt;&lt;/canvas&gt;</b><br />&lt;script&gt;
+    <b>var rectCanvas = document.querySelector("#shapes"); </b><span style="color:Green">/// Get canvas object</span>
+    <b>var ctx = rectCanvas.getContext("2d"); </b><span style="color:Green">/// Get reference to canvas context</span>
+    <b>ctx.fillStyle = "rgb(200,0,0)"; </b><span style="color:Green">/// Create a red rectangle</span>
+    <b>ctx.fillRect(10, 10, 55, 50);</b>
+    <span style="color:Green">///add more rectangles</span>
+    <b>ctx.beginPath(); </b><span style="color:Green">/// start path for circle</span>
+    <b>ctx.arc(200, 90, 75, 0, Math.PI * 2, true);
+    ctx.closePath();
+    ctx.fill();</b>
+&lt;/script&gt;</pre>
+                <h2>Use scalable vector graphics (SVG) on your the new canvas element</h2>
+                <canvas id="shapes" width="300" height="300"></canvas>
+
+                <script>
+                    var rectCanvas = document.querySelector("#shapes");
+                    var ctx = rectCanvas.getContext("2d");
+
+                    ctx.fillStyle = "rgb(200,0,0)";
+                    ctx.fillRect(10, 10, 55, 50);
+
+                    ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+                    ctx.fillRect(30, 30, 55, 50);
+
+                    ctx.fillStyle = "rgba(0, 200, 0, 0.5)";
+                    ctx.fillRect(50, 50, 55, 50);
+
+                    ctx.fillStyle = "rgba(0, 200, 200, 0.5)";
+                    ctx.fillRect(100, 100, 75, 75);
+
+                    ctx.fillStyle = "rgba(200, 0, 200, 0.5)";
+                    ctx.fillRect(150, 150, 100, 100);
+
+                    ctx.fillStyle = "rgba(200, 200, 0, 0.5)";
+                    ctx.beginPath();
+                    ctx.arc(200, 90, 75, 0, Math.PI * 2, true);
+                    ctx.closePath();
+                    ctx.fill();
+
+                </script>
+
+            </section>
+        </div>
+        <div class = "slide">
+            <header>
+                <h1>Canvas - Part 2</h1>
+            </header>
+            <section>
+            <pre><b>&lt;canvas id = "bouncyball" width="300" height="300"&gt;&lt;/canvas&gt;</b><br />
+&lt;script&gt;
+<span style = "color:Green">/// The javascript is a bit too long to fit here. 
+/// But, we will include in the demo code!</span>
+&lt;/script&gt;
+</pre>
+
+            <h2>Create animations in your canvas</h2>
+                <canvas id="bouncyball" width="300" height="300"></canvas>
+                <script>
+                   
+                    var x = 250;
+                    var y = 250;
+                    var dx = 2;
+                    var dy = 4;
+                    var ctx;
+                    var WIDTH;
+                    var HEIGHT;
+
+                    function circle(x, y, r) {
+                        ctx.beginPath();
+                        ctx.arc(x, y, r, 0, Math.PI * 2, true);
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+
+                    function rect(x, y, w, h) {
+                        ctx.beginPath();
+                        ctx.rect(x, y, w, h);
+                        ctx.closePath();
+                        ctx.fill();
+                    }
+
+                    function clear() {
+                        ctx.clearRect(0, 0, WIDTH, HEIGHT);
+                    }
+
+                    function init() {
+                        var canvas = document.querySelector("#bouncyball");
+                        ctx = canvas.getContext("2d");
+                        WIDTH = canvas.getAttribute("width");
+                        HEIGHT = canvas.getAttribute("height");
+                        return setInterval(draw, 10);
+                    }
+
+                    function draw() {
+                        clear();
+                        circle(x, y, 20);
+
+                        if (x + dx > WIDTH || x + dx < 0)
+                            dx = -dx;
+                        if (y + dy > HEIGHT || y + dy < 0)
+                            dy = -dy;
+
+                        x += dx;
+                        y += dy;
+                    }
+
+    
+                    init();
+
+                </script> 
+            </section>
+        </div>
           <div class="slide">
             <section class="middle emphasis">
               <h1>Cool new stuff for web apps!</h1>
