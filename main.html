@@ -1032,6 +1032,7 @@
 
               window.addEventListener("message",
                 function (e) {
+                    alert(e.data);
                     if (e.data == 'true') {
                         document.getElementById('name-valid').innerHTML = 'The name you entered is: <span style = "color:Green;"><b>Valid</b></span>';
                     }
