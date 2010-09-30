@@ -981,20 +981,38 @@
               <ul>
                 <li>Web Sockets</li>
                 <li>Local/Offline Storage</li>
-                <li>Cross-site Document Sharing</li>
+                <li>Cross-site Messaging</li>
               </ul>
             </section>
           </div>
           
           <div class="slide">
             <header>
-              <h1>Web Sockets</h1>
+              <h1>Cross-site Messaging</h1>
             </header>
-            <section class="middle">
-              <p>Try this cool demo:</p>
-              <h2><a href="http://www.ape-project.org/home.html" target="_blank">http://www.ape-project.org/home.html</a></h2>
+            <section>
+                <p>We need to access a Web Service.  We can't make an AJAX call directly because the Web Service is on another domain.</p>
+                <p>Instead we can send a message to a page running on the same domain as our service and get our result.</p>
+              <input id = "name-text" type = "text" value = "dave"  /><input type = "button" value = "Validate" onclick = "ValidateUser();" />
             </section>
+            <iframe id = "validationdomainiframe" src = "http://localhost:60577/TestAJAXSameDomain.aspx" style="display:none"></iframe>
           </div>
+
+          <script>
+              var validationiframe;
+              window.onload = function () { validationiframe = document.getElementById('validationdomainiframe').contentWindow; }
+              function ValidateUser() {
+                  var name = document.getElementById('name-text').value;
+                  validationiframe.postMessage(name, "http://localhost:60577/TestAJAXSameDomain.aspx");
+
+              }
+
+              window.addEventListener("message",
+                function (e) {
+                    alert(e.data);
+                }, false);
+
+          </script>
           
           <div class="slide">
 			<style>
