@@ -1017,6 +1017,7 @@
                 <p>We need to access a Web Service.  We can't make an AJAX call directly because the Web Service is on another domain.</p>
                 <p>Instead we can send a message to a page running on the same domain as our service and get our result.</p>
               <input id = "name-text" type = "text" value = "dave"  /><input type = "button" value = "Validate" onclick = "ValidateUser();" />
+              <p id = "name-valid"></p>
             </section>
             <iframe id = "validationdomainiframe" src = "http://davearlin.com/TestAJAXSameDomain.aspx" style="display:none"></iframe>
           </div>
@@ -1031,7 +1032,12 @@
 
               window.addEventListener("message",
                 function (e) {
-                    alert(e.data);
+                    if (e.data == 'true') {
+                        document.getElementById('name-valid').innerHTML = 'The name you entered is: <span style = "color:Green;"><b>Valid</b></span>';
+                    }
+                    else {
+                        document.getElementById('name-valid').innerHTML = 'The name you entered is: <span style = "color:Red;"><b>Invalid</b></span>';
+                    }
                 }, false);
 
           </script>
