@@ -908,7 +908,7 @@
             <h2>Create animations in your canvas</h2>
                 <canvas id="bouncyball" width="300" height="300"></canvas>
                 <script>
-                   
+
                     var x = 250;
                     var y = 250;
                     var dx = 2;
@@ -956,7 +956,7 @@
                         y += dy;
                     }
 
-    
+
                     init();
 
                 </script> 
@@ -1003,7 +1003,7 @@
               window.onload = function () { validationiframe = document.getElementById('validationdomainiframe').contentWindow; }
               function ValidateUser() {
                   var name = document.getElementById('name-text').value;
-                  validationiframe.postMessage(name, "http://localhost:60577/TestAJAXSameDomain.aspx");//
+                  validationiframe.postMessage(name, "http://davearlin.com/TestAJAXSameDomain.aspx"); //
 
               }
 
@@ -1044,35 +1044,35 @@ textarea.value = window.<b>localStorage</b>['value'];
               <textarea id="ta" placeholder="Type your text here..."></textarea><button id="save-ta">Save</button>
               <p id="ta-log"></p>
 		<script>
-		  var area = document.querySelector('#ta');
-		  // place content from previous edit
-		  if (!area.value) {
-		    area.value = window.localStorage.getItem('value');
-		  }
-		  updateLog(false);
- 
-		  // your content will be saved locally
-		  document.querySelector('#save-ta').addEventListener('click', function () {
-		    window.localStorage.setItem('value', area.value);
-		    window.localStorage.setItem('timestamp', (new Date()).getTime());
-		    updateLog(true);
-		  }, false);
- 
-		  function updateLog(new_save) {
-		    var log = document.querySelector("#ta-log");
-		    var delta = 0;
-		    if (window.localStorage.getItem('value')) {
-		      delta = ((new Date()).getTime() - (new Date()).setTime(window.localStorage.getItem('timestamp'))) / 1000;
-		      if (new_save) {
-		        log.textContent = 'Saved. Content will be available after browser refresh/reopen.';
-		        setTimeout(function() {
-		          log.textContent = '';
-		        }, 3000);
-		      } else {
-		        log.textContent = 'last saved: ' + delta + 's ago';
-		      }
+		    var area = document.querySelector('#ta');
+		    // place content from previous edit
+		    if (!area.value) {
+		        area.value = window.localStorage.getItem('value');
 		    }
-		  }
+		    updateLog(false);
+
+		    // your content will be saved locally
+		    document.querySelector('#save-ta').addEventListener('click', function () {
+		        window.localStorage.setItem('value', area.value);
+		        window.localStorage.setItem('timestamp', (new Date()).getTime());
+		        updateLog(true);
+		    }, false);
+
+		    function updateLog(new_save) {
+		        var log = document.querySelector("#ta-log");
+		        var delta = 0;
+		        if (window.localStorage.getItem('value')) {
+		            delta = ((new Date()).getTime() - (new Date()).setTime(window.localStorage.getItem('timestamp'))) / 1000;
+		            if (new_save) {
+		                log.textContent = 'Saved. Content will be available after browser refresh/reopen.';
+		                setTimeout(function () {
+		                    log.textContent = '';
+		                }, 3000);
+		            } else {
+		                log.textContent = 'last saved: ' + delta + 's ago';
+		            }
+		        }
+		    }
  
 		</script>
               
@@ -1108,76 +1108,76 @@ tx.<b>executeSql</b>(<em>"SELECT * FROM test"</em>, [], successCallback, errorCa
                 <p>See the generated database: Developer> Developer Tools> Storage</p>
               </div>
 				          <script>
-				            var db;
-				            var log = document.getElementById('db-log');
-				            if (window.openDatabase) {
-				              db = openDatabase("DBTest", "1.0", "HTML5 Database API example", 200000);
-				              showRecords();  
-				            }
-				            document.getElementById('db-results').addEventListener('click', function(e) { e.preventDefault(); }, false);
- 
-				            function onError(tx, error) {
-				              log.innerHTML += '<p>' + error.message + '</p>';
-				            }
- 
-				            // select all records and display them
-				            function showRecords() {
-				              document.getElementById('db-results').innerHTML = '';
-				              db.transaction(function(tx) {
-				                tx.executeSql("SELECT * FROM Table1Test", [], function(tx, result) {
-				                  for (var i = 0, item = null; i < result.rows.length; i++) {
-				                    item = result.rows.item(i);
-				                    document.getElementById('db-results').innerHTML += 
-				                        '<li><span contenteditable="true" onkeyup="updateRecord('+item['id']+', this)">'+
-				                        item['text'] + '</span> <a href="#" onclick="deleteRecord('+item['id']+')">[Delete]</a></li>';
-				                  }
-				                });
-				              });
-				            }
- 
-				            function createTable() {
-				              db.transaction(function(tx) {
-				                tx.executeSql("CREATE TABLE Table1Test (id REAL UNIQUE, text TEXT)", [],
-				                    function(tx) {  log.innerHTML = '<p>Table1Test created!</p>' },
+				              var db;
+				              var log = document.getElementById('db-log');
+				              if (window.openDatabase) {
+				                  db = openDatabase("DBTest", "1.0", "HTML5 Database API example", 200000);
+				                  showRecords();
+				              }
+				              document.getElementById('db-results').addEventListener('click', function (e) { e.preventDefault(); }, false);
+
+				              function onError(tx, error) {
+				                  log.innerHTML += '<p>' + error.message + '</p>';
+				              }
+
+				              // select all records and display them
+				              function showRecords() {
+				                  document.getElementById('db-results').innerHTML = '';
+				                  db.transaction(function (tx) {
+				                      tx.executeSql("SELECT * FROM Table1Test", [], function (tx, result) {
+				                          for (var i = 0, item = null; i < result.rows.length; i++) {
+				                              item = result.rows.item(i);
+				                              document.getElementById('db-results').innerHTML +=
+				                        '<li><span contenteditable="true" onkeyup="updateRecord(' + item['id'] + ', this)">' +
+				                        item['text'] + '</span> <a href="#" onclick="deleteRecord(' + item['id'] + ')">[Delete]</a></li>';
+				                          }
+				                      });
+				                  });
+				              }
+
+				              function createTable() {
+				                  db.transaction(function (tx) {
+				                      tx.executeSql("CREATE TABLE Table1Test (id REAL UNIQUE, text TEXT)", [],
+				                    function (tx) { log.innerHTML = '<p>Table1Test created!</p>' },
 				                    onError);
-				              });
-				            }
- 
-				            // add record with random values
-				            function newRecord() {
-				              var num = Math.round(Math.random() * 10000); // random data
-				              db.transaction(function(tx) {
-				                tx.executeSql("INSERT INTO Table1Test (id, text) VALUES (?, ?)", [num, document.querySelector('#todoitem').value],
-				                    function(tx, result) {
-				                      log.innerHTML = '';
-				                      showRecords();
-				                    }, 
+				                  });
+				              }
+
+				              // add record with random values
+				              function newRecord() {
+				                  var num = Math.round(Math.random() * 10000); // random data
+				                  db.transaction(function (tx) {
+				                      tx.executeSql("INSERT INTO Table1Test (id, text) VALUES (?, ?)", [num, document.querySelector('#todoitem').value],
+				                    function (tx, result) {
+				                        log.innerHTML = '';
+				                        showRecords();
+				                    },
 				                    onError);
-				              });
-				            }
- 
-				            function updateRecord(id, textEl) {
-				              db.transaction(function(tx) {
-				                tx.executeSql("UPDATE Table1Test SET text = ? WHERE id = ?", [textEl.innerHTML, id], null, onError);
-				              });
-				            }
- 
-				            function deleteRecord(id) {
-				              db.transaction(function(tx) {
-				                tx.executeSql("DELETE FROM Table1Test WHERE id=?", [id],
-				                    function(tx, result) { showRecords() }, 
+				                  });
+				              }
+
+				              function updateRecord(id, textEl) {
+				                  db.transaction(function (tx) {
+				                      tx.executeSql("UPDATE Table1Test SET text = ? WHERE id = ?", [textEl.innerHTML, id], null, onError);
+				                  });
+				              }
+
+				              function deleteRecord(id) {
+				                  db.transaction(function (tx) {
+				                      tx.executeSql("DELETE FROM Table1Test WHERE id=?", [id],
+				                    function (tx, result) { showRecords() },
 				                    onError);
-				              });
-				            }
- 
-				            // delete table from db
-				            function dropTable() {
-				              db.transaction(function(tx) {
-				                tx.executeSql("DROP TABLE Table1Test", [],
-				                    function(tx) { showRecords() }, 
+				                  });
+				              }
+
+				              // delete table from db
+				              function dropTable() {
+				                  db.transaction(function (tx) {
+				                      tx.executeSql("DROP TABLE Table1Test", [],
+				                    function (tx) { showRecords() },
 				                    onError);
-				              });
-				            }
+				                  });
+				              }
 				          </script>
               
             </section>
@@ -1256,25 +1256,22 @@ phone.onblur = function()
 <input id="phonedemo" type="tel" default="(555) 555-5555" />
 </pre>
               <script>
-              var phone = document.getElementById('phonedemo');
-              if(phone.value == "")
-              {
-                phone.value = phone.getAttribute("default");
-              }
-              
-              phone.onfocus = function ()
-              {
-                if(this.value == this.getAttribute("default")){
-                  this.value = "";
-                };
-              }
-              
-              phone.onblur = function ()
-              {
-                if(this.value == ""){
-                  this.value = this.getAttribute("default");
-                }
-              }
+                  var phone = document.getElementById('phonedemo');
+                  if (phone.value == "") {
+                      phone.value = phone.getAttribute("default");
+                  }
+
+                  phone.onfocus = function () {
+                      if (this.value == this.getAttribute("default")) {
+                          this.value = "";
+                      };
+                  }
+
+                  phone.onblur = function () {
+                      if (this.value == "") {
+                          this.value = this.getAttribute("default");
+                      }
+                  }
               </script>
             </section>
           </div>
@@ -1370,14 +1367,14 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
             </pre>
                <canvas id="canvas-area" width="838" height="225"></canvas>
             <script>
-              var canvasContext = document.getElementById("canvas-area").getContext("2d");
-              canvasContext.fillRect(250, 25, 150, 100);
-              canvasContext.beginPath();
-              canvasContext.arc(450, 110, 100, Math.PI * 1/2, Math.PI * 3/2, false);
-              canvasContext.lineWidth = 15;
-              canvasContext.lineCap = 'round';
-              canvasContext.strokeStyle = 'rgba(255, 127, 0, 0.5)';
-              canvasContext.stroke();
+                var canvasContext = document.getElementById("canvas-area").getContext("2d");
+                canvasContext.fillRect(250, 25, 150, 100);
+                canvasContext.beginPath();
+                canvasContext.arc(450, 110, 100, Math.PI * 1 / 2, Math.PI * 3 / 2, false);
+                canvasContext.lineWidth = 15;
+                canvasContext.lineCap = 'round';
+                canvasContext.strokeStyle = 'rgba(255, 127, 0, 0.5)';
+                canvasContext.stroke();
             </script>
               
             </section>
@@ -1977,15 +1974,15 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
     <![endif]-->
           
     <script>
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-15028909-5']);
-      _gaq.push(['_trackPageview']);
- 
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-15028909-5']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
     </script>
           
         </body>
