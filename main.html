@@ -46,6 +46,13 @@
         overflow: hidden;
         background: #778;
       }
+      
+      .shadow  { text-shadow: rgba(0, 0, 0, 0.5) 0 4px 4px; }
+      .stroke  {
+                -webkit-text-fill-color: black;
+                -webkit-text-stroke-color: red;
+                -webkit-text-stroke-width: 1px;
+               }
  
       .slides {
         width: 100%;
@@ -678,6 +685,50 @@
               
             </section>
           </div>
+
+          <div class = "slide">
+            <section class="middle emphasis">
+              <h1>Rich UI Updates</h1>
+            </section>
+          </div>
+
+          <div class = "slide">
+            <header>
+                <h1>Audio & Video</h1>
+            </header>
+            
+            <section>
+
+                <pre>&lt;h2&gt;New Divide - Linkin Park&lt;/h2&gt;<br />&lt;<b>audio</b> <b>src</b> = "src/New_Divide.ogg" <b>controls</b>&gt;&lt;/<b>audio</b>&gt;</pre>
+                
+                <h2>New Divide - Linkin Park</h2>
+                <audio src = "src/New_Divide.ogg" controls></audio>
+                
+                <pre>&lt;h2&gt;O3D - 3D Graphics API Demo Video&lt;/h2&gt;<br />&lt;<b>video</b> <b>src</b> = "http://www.youtube.com/demo/google_main.mp4" <b>controls</b> <b>autobuffer</b>/&gt;</pre>
+                <h2>O3D - 3D Graphics API Demo Video</h2>
+                <video src="http://www.youtube.com/demo/google_main.mp4"  controls autobuffer />
+            </section>
+          </div>
+          <div class = "slide">
+            <header>
+                <h1>CSS3</h1>
+            </header>
+
+            <section>
+                <pre>&lt;style&gt;<br />.shadow { <b>text-shadow: rgba(0, 0, 0, 0.5) 0 4px 4px;</b> } <br />&lt;/style&gt;<br /><br />&lt;p class = "shadow"&gt;Text with shadows&lt;/p&gt;</pre>
+                <p class = "shadow">Text with shadows</p>
+
+                <pre>&lt;style&gt;<br />.stroke<br />{<br /><b>-webkit-text-fill-color: black;</b><br /><b>-webkit-text-stroke-color: red;</b><br /><b>-webkit-text-stroke-width: 1px;</b><br />}<br />&lt;/style&gt;<br /><br />&lt;p&gt;Add a &lt;span class = "stroke"&gt;stroke&lt;/span&gt; around your text&lt;/p&gt;</pre>
+                <p>Add a <span class = "stroke">stroke</span> around your text</p>
+            </section>
+          </div>
+
+           <div class = "slide">
+            <header>
+                <h1>CSS3 - Part 2</h1>
+            </header>
+            </div>
+
           <div class="slide">
             <section class="middle emphasis">
               <h1>Cool new stuff for web apps!</h1>
