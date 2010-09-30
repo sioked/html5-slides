@@ -476,7 +476,7 @@
       }
       
       .summary li::before, .bullets li::before {
-        content: '· ';
+        content: 'Â· ';
       }
  
       .stroke {
@@ -508,8 +508,6 @@
         width: 50px;
       }
     </style>
-  
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
   
   </head>
   <body>
@@ -556,6 +554,8 @@
               <h2> Modern markup for the modern web. </h2>
             </hgroup>
             <p>*Including other next generation technologies of the Web Development stack</p>
+            <h2>Follow Along:</h2>
+            <h2><a href="http://bit.ly/aVWYaw" target="_blank">http://bit.ly/aVWYaw</a></h2>
           </section>
         </div>
         <div class="slide">
@@ -683,6 +683,19 @@
               
             </section>
           </div>
+          
+          <style>
+          img.tags1 { height: 230px; }
+          img.tags2 { height: 420px; }
+          </style>
+          
+          <div class="slide">
+            <section class="middle">
+              <img src="src/tags1.png" class="tags1"></img>
+              <img src="src/tags2.png" class="tags2"></img>
+            </section>
+          </div>
+          
           <div class="slide">
             <header><span class="html">HTML</span>
               <h1>New semantic tags</h1>
@@ -740,6 +753,16 @@
 &lt;/span&gt;
 			</pre>
               
+            </section>
+          </div>
+          
+          <style>
+          img.tags3 { height: 700px; }
+          </style>
+          
+          <div class="slide">
+            <section class="middle">
+              <img src="src/tags3.png" class="tags3"></img>
             </section>
           </div>
 
@@ -1004,7 +1027,6 @@
               function ValidateUser() {
                   var name = document.getElementById('name-text').value;
                   validationiframe.postMessage(name, "http://davearlin.com/TestAJAXSameDomain.aspx"); //
-
               }
 
               window.addEventListener("message",
@@ -1019,11 +1041,19 @@
 		    	#ta {
 		        	width: 300px;
 		        	height: 150px;
-		        	display: block;
+		        	display: inline;
 		        }
+		        #unsaved {
+              width: 300px;
+              height: 150px;
+              display: inline;
+            }
 		        #localstorage-message {
 		           padding-top: 50px;
 		        }
+		        .textareas {
+              margin-top: 20px;
+            }
 		    </style>
             
             <header>
@@ -1041,7 +1071,11 @@ textarea.value = window.<b>localStorage</b>['value'];
 		</pre>
               
               <p id="localstorage-message">Save text value on the client side (crash-safe)</p>
-              <textarea id="ta" placeholder="Type your text here..."></textarea><button id="save-ta">Save</button>
+              <section class="textareas">
+                <textarea id="ta" placeholder="Type your text here..."></textarea>
+                <textarea id="unsaved" placeholder="This text is not saved..."></textarea>
+              </section>
+              <button id="save-ta">Save</button>
               <p id="ta-log"></p>
 		<script>
 		    var area = document.querySelector('#ta');
@@ -1183,14 +1217,23 @@ tx.<b>executeSql</b>(<em>"SELECT * FROM test"</em>, [], successCallback, errorCa
             </section>
           </div>
           
+          
+          <div class="slide">
+            <header>
+              <h1>Mobile Geolocation Demo</h1>
+            </header>
+            <section class="middle">
+              <p>Open this link from your mobile device (iPhone preferred)</p>
+              <h2><a href="http://bit.ly/brJYOc" target="_blank">http://bit.ly/brJYOc</a></h2>
+            </section>
+          </div>
+          
           <div class="slide">
             <section class="bulleted">
               <header>
                 <h1>Other cool stuff:</h1>
               </header>
               <ul>
-                <li>Geolocation</li>
-                <li>Cross-site Document Sharing</li>
                 <li>Improved javascript selectors</li>
                 <li>Better standardization across browsers (Incl. the DOM)</li>
                 <li>Notifications</li>
@@ -1300,13 +1343,11 @@ phone.onblur = function()
           
           <div class="slide">
             <header>
-              <h1>Mobile Form Examples</h1>
+              <h1>Form Demo</h1>
             </header>
             <section class="middle">
               <p>Try this cool demo:</p>
-              <h2><a href="bit.ly/html5mobile" target="_blank">ContentEditable</a></h2>
-              <p>And this one:</p>
-              <h2><a href="bit.ly/html5mobile" target="_blank">Mobile Demo</a></h2>
+              <h2><a href="http://bit.ly/cGNgub" target="_blank">http://bit.ly/cGNgub</a></h2>
             </section>
           </div>
           
@@ -1569,7 +1610,7 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
           <div class="slide">
             <section class="bulleted">
               <header>
-                <h1>Backwards Compatibility:</h1>
+                <h1>Backwards Compatibility Strategy:</h1>
               </header>
               <ul>
                 <li>Feature Detection</li>
@@ -1584,29 +1625,12 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
           <div class="slide">
             <section class="bulleted">
               <header>
-                <h1>Issues</h1>
-              </header>
-              <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-              </ul>
-            </section>
-          </div>
-          
-          <div class="slide">
-            <section class="bulleted">
-              <header>
                 <h1>Other cool items we didn't have time to cover</h1>
               </header>
               <ul>
                 <li>(history).pushstate Javascript API</li>
                 <li>Cache manifest - Offline apps</li>
                 <li>Web workers</li>
-                <li></li>
-                <li></li>
               </ul>
             </section>
           </div>
