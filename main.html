@@ -1014,10 +1014,30 @@
               <h1>Cross-site Messaging</h1>
             </header>
             <section>
-                <p>We need to access a Web Service.  We can't make an AJAX call directly because the Web Service is on another domain.</p>
-                <p>Instead we can send a message to a page running on the same domain as our service and get our result.</p>
+            <p>Here is a specific scenario.  We need to access a Web Service.  We can't make an AJAX call directly because the Web Service is on another domain.</p>
+                <p>Instead we can <b>post a message</b> to a page running on the same domain as our Web Service and get our result.</p>
+                <h2>Client Code (http://edsiok.com)</h2>
+            <pre>
+&lt;iframe id="iframe1" src="http://davearlin.com/page.html" style="display:none"/&gt;
+&lt;input id = "name-text" type="text" valeu = "dave" /&gt;
+&lt;input type = "button" value = "Validate" onclick = "ValidateUser();" /&gt;
+&lt;script&gt;
+    var iframe = document.getElementById('iframe1').contentWindow;
+    function ValidateUser() {
+        var name = document.getElementById('name-text').value;
+        <b>iframe.postMessage(name, "http://davearlin.com/page.html");</b>
+    }
+    <b>window.addEventListener("message", function (e) {
+            if (e.data == 'true') { ShowValidMessage(); }
+            else { ShowInvalidMessage(); }
+        }, false);</b>
+&lt;/script&gt;
+            </pre>
+              <div style = "float:left">  
               <input id = "name-text" type = "text" value = "dave"  /><input type = "button" value = "Validate" onclick = "ValidateUser();" />
-              <p id = "name-valid"></p>
+              </div>
+              <p id = "name-valid" style= "float:left; margin-top:2px;margin-left:10px;"></p>
+              <div style="clear:both;"></div>
             </section>
             <iframe id = "validationdomainiframe" src = "http://davearlin.com/TestAJAXSameDomain.aspx" style="display:none"></iframe>
           </div>
@@ -1032,7 +1052,6 @@
 
               window.addEventListener("message",
                 function (e) {
-                    alert(e.data);
                     if (e.data == 'true') {
                         document.getElementById('name-valid').innerHTML = 'The name you entered is: <span style = "color:Green;"><b>Valid</b></span>';
                     }
@@ -1043,6 +1062,38 @@
 
           </script>
           
+          <div class="slide">
+            <header>
+              <h1>Cross-site Messaging - Part 2</h1>
+            </header>
+            <section>
+                <h2>Server Code (http://davearlin.com/page.html)</h2>
+                <pre>
+&lt;script type="text/javascript"&gt;
+    var baseUrl = "http://davearlin.com/UserMessageService.asmx";
+
+    function validateUser(username, event) {
+        var postData = username;
+        $.ajax({
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            url: baseUrl + "/ValidateUser",
+            data: '{ userId: "' + postData + '" }',
+            dataType: "json",
+            success: function (msg) {
+                <b>event.source.postMessage(msg.d.toString(), event.origin);</b>
+            }
+        });
+    }
+
+    <b>window.addEventListener("message",
+    function (e) {
+        validateUser(e.data, e);
+    }, false);</b>
+&lt;/script&gt;
+                </pre>
+            </section>
+        </div>
           <div class="slide">
 			<style>
 		    	#ta {
