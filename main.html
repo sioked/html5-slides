@@ -1976,6 +1976,9 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
             this._update();
           },
           go: function(num) {
+            if(!num){
+            	return;
+            }
             if (history.pushState && this.current != num) {
               history.replaceState(this.current, 'Slide ' + this.current, '#slide' + this.current);
             }
@@ -2069,5 +2072,4 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
     </script>
           
         </body>
-      </html>/bin/bash: -c: line 0: syntax error near unexpected token `newline' /bin/bash: -c: line 0: `
-      <!DOCTYPE html>'
+      </html>
